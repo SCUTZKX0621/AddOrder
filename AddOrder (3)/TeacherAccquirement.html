@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>家教联盟</title>
+    <style>
+        body {
+            font: 'Microsoft YaHei';
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #box1 {
+            position: relative;
+            left: 405px;
+        }
+        
+        * {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 标题 -->
+    <h1>老师要求</h1>
+    <!-- 单选框：性别 -->
+    <div id="box1">
+        <div>老师性别:
+            <label><input type="radio" name="sex" value="男">男</label>
+            <label><input type="radio" name="sex" value="女">女</label>
+        </div>
+        <br>
+        <div>
+            <label>愿付薪酬：</label>
+
+            <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" placeholder="单位：/小时">
+        </div>
+        <form method="post" action="save.php">
+            <textarea cols="45" rows="10">
+        输入您对孩子的要求和孩子的简要情况
+    </textarea>
+            <br>
+            <br>
+            <button><a href="StudentInformation.html">
+        上一页</a></button>
+            <button><a href="ContactWay.html">
+        下一页</a></button>
+        </form>
+    </div>
+</body>
+
+</html>

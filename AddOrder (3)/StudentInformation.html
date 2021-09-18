@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div>
+        <title>家教联盟</title>
+        <style>
+            body {
+                font: 'Microsoft YaHei';
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            #box1 {
+                position: relative;
+                left: 405px;
+            }
+            
+            * {
+                background-color: blanchedalmond;
+            }
+        </style>
+    </div>
+
+</head>
+
+<body>
+
+    <!--标题-->
+    <h1>学生信息</h1>
+    <!-- 单选框：性别 -->
+    <div id="box1">
+        <div>学生性别:
+            <label><input type="radio" name="sex" value="男生">男生</label>
+            <label><input type="radio" name="sex" value="女生">女生</label>
+        </div>
+        <br>
+        <!-- 复选框 -->
+        <div>
+            学生年级：
+            <label><input type="checkbox" name="like" value="0">初一</label>
+            <label><input type="checkbox" name="like" value="1">初二</label>
+            <label><input type="checkbox" name="like" value="2">初三</label>
+            <label><input type="checkbox" name="like" value="3">高一</label>
+            <label><input type="checkbox" name="like" value="4">高二</label>
+            <label><input type="checkbox" name="like" value="5">高三</label>
+        </div>
+        <br>
+        <div>
+            学生科目：
+            <label><input type="checkbox" name="like" value="0">语文</label>
+            <label><input type="checkbox" name="like" value="1">数学</label>
+            <label><input type="checkbox" name="like" value="2">英语</label>
+        </div>
+        <br/>
+        <div>
+            <input type="text" name="科目" placeholder="其他科目">
+        </div>
+        <br>
+        <div>
+            <label>一周上课次数</label>
+            <!-- 输入上课次数(只能输入数字) -->
+            <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" placeholder="1到7次较合适">
+        </div>
+        <br>
+        <div>
+            <label>上课时间</label>
+            <input type="text" placeholder="如周日晚上，或自行协商">
+        </div>
+
+        <br>
+        <button id="green"><a href="TeacherAccquirement.html">
+        下一页</a></button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>家教联盟</title>
+    <style>
+        body {
+            font: 'Microsoft YaHei';
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        #box1 {
+            position: relative;
+            left: 500px;
+        }
+        
+        * {
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <!--标题-->
+    <h1 class="center">联系方式</h1>
+    <div id="box1">
+        <label>家长名字</label>
+        <input type="text" placeholder="如陈某某">
+        <br>
+        <br>
+
+        <label>家长电话</label>
+        <input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" placeholder="请输入正确的电话">
+
+        <br>
+        <br>
+
+        <div id="selector">
+            <label>区域</label>
+            <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option v-for="option in options">{{option}}</option>
+        </select>
+        </div>
+
+        <br>
+        <label>家教地址</label>
+        <input type="text" placeholder="教学地点">
+        <br>
+        <br>
+        <button><a href="TeacherAccquirement.html">
+        上一页</a></button>
+        <button class="center">提交</button>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <script>
+            var app = new Vue({
+                el: '#selector',
+                data: {
+                    selected: '',
+                    options: [
+
+                    ]
+                },
+                mounted() {
+                    axios.get('http://apitest.gxlmedu.com/enum/getAreaList')
+                        .then(response => {
+                            this.options = response.data.data;
+                            console.log(this.options);
+                        })
+                        .catch((err) => {
+                            console.log(options)
+                        })
+                }
+            })
+        </script>
+        <div>
+</body>
+
+</html>
